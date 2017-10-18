@@ -4,11 +4,13 @@ $(function() {
 var Page = (function() {
 
 	var $navArrows = $( '#nav-arrows' ).hide(),
+	    $navOptions = $('#nav-options').hide(),
 		$shadow = $( '#shadow' ).hide(),
 		slicebox = $( '#sb-slider' ).slicebox( {
 			onReady : function() {
 
 				$navArrows.show();
+				$navOptions.show();
 				$shadow.show();
 
 			},
@@ -37,6 +39,20 @@ var Page = (function() {
 				slicebox.previous();
 				return false;
 
+			} );
+
+			$('#navPlay').on( 'click' , function() {
+
+				slicebox.play();
+				return false;
+
+			} );
+
+			$('#navPause').on( 'click' , function() {
+
+				slicebox.pause();
+				return false;
+				
 			} );
 
 		};
